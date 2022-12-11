@@ -1,0 +1,25 @@
+{
+  "name": "tailwebs-assignment",
+  "version": "1.0.0",
+  "description": "tailWebs Backend Assignment",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Abhiii00/TailWebs-Assignment.git"
+  },
+  "author": "Abhay singh chouhan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Abhiii00/TailWebs-Assignment/issues"
+  },
+  "homepage": "https://github.com/Abhiii00/TailWebs-Assignment#readme",
+  "dependencies": {
+    "bcrypt": "^5.1.0",
+    "express": "^4.18.2",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^6.8.0"
+  }
+}
