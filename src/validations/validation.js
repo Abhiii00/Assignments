@@ -39,7 +39,7 @@ const isValidName = function (name) {
 
 let isValidSubject = (subject) => {
     return ['Accounts','Economics','Business','English','Hindi'].includes(subject);
-  }
+}
 
 
 module.exports={isValidMobile, isValidEmail, isValidPass, isValidObjectId, isValidSpace, isvalidRequest, isValidName, isValidSubject, isValidNumber}

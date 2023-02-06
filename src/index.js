@@ -1,20 +1,20 @@
-const express = require('express')
-const route = require('./route/route.js');
-const mongoose = require('mongoose');
-const app = express();
+let express = require('express')
+let mongoose = require('mongoose')
+let route = require('./route/route')
+let app = express()
 
-app.use(express.json());
+
+app.use(express.json())
+mongoose.set('strictPopulate', false);
 mongoose.set('strictQuery', false);
 
-mongoose.connect("mongodb+srv://abhay:abhayabhay@cluster0.6itwk6b.mongodb.net/tailWeb-Assignment?retryWrites=true&w=majority", {
+mongoose.connect('mongodb+srv://abhay:abhayabhay@cluster0.6itwk6b.mongodb.net/Card-Assignment?retryWrites=true&w=majority',{
     useNewUrlParser: true
 })
-.then( () => console.log("MongoDb is connected"))
-.catch ( err => console.log(err) )
-
-app.use('/', route);
+.then(()=> console.log('MongoDB is Connected'))
+.catch((err)=> console.log(err))
 
 
-app.listen(process.env.PORT || 3000, function () {
-    console.log('Express app running on port ' + (process.env.PORT || 3000))
-});
+app.use('/',route)
+
+app.listen(3000, ()=> console.log('express App running on Port 3000'))

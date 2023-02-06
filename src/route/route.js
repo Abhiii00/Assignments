@@ -3,24 +3,17 @@ const router = express.Router();
 
 //---------------------------|| CONTROLLERS ||-------------------------------
 
-const userController = require("../controllers/userController.js")       
-const marksController = require("../controllers/marksController.js")    
+let customerController = require('../controllers/customer')
+let cardController = require('../controllers/card')
 
-//---------------------------|| CONTROLLERS ||-------------------------------
+//---------------------------|| Router's ||-------------------------------
 
-const mid = require("../middleware/middleware.js")       
+router.post('/createCustomer',customerController.createCustomer)
+router.get('/getCustomer',customerController.getCustomer)
+router.delete('/deleteCustomer/:customerId',customerController.deleteCustomer)
 
-//---------------------------|| USER API'S ||-------------------------------
-
-router.post("/user/register",userController.createUser)
-router.post("/user/login",userController.loginUser)
-
-//---------------------------|| MARKS API'S ||-------------------------------
-
-router.post("/marks/:userId", mid.authentication, mid.Authorisation, marksController.createMarks)
-router.get("/marks/:userId", mid.authentication, mid.Authorisation,marksController.getStudentDetails)
-router.put("/marks/:userId/:studentId", mid.authentication, mid.Authorisation, marksController.updateStudentDetails)
-router.delete("/marks/:userId/:studentId", mid.authentication, mid.Authorisation, marksController.deleteStudent)
+router.post('/createCard',cardController.createCard)
+router.get('/getCard',cardController.getCard)
 
 
 //---------------------------|| FOR CHECKING THE ENDPOINT ||-------------------------------
